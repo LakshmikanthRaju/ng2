@@ -27,7 +27,7 @@
   </div>
 
   <div fxFlex="40">
-  <div *ngIf="dish.comments">  
+  <div *ngIf="dish && dish.comments">  
     <md-list>
       <h3>Comments</h3>
       <md-list-item *ngFor="let comment of dish.comments" style="height:100px">
