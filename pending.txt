@@ -1,3 +1,2 @@
-1. Comments display layout not proper
-    a. height of comment is not auto, it is static
+1. Comments display layout not proper - height of comment is not auto, it is static
 2. Routing across menu duplicates its content, not hiding - SEEMS FIXED
