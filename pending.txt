@@ -1,2 +1,5 @@
 1. Comments display layout not proper - height of comment is not auto, it is static
 2. Routing across menu duplicates its content, not hiding - SEEMS FIXED
+3. Dish detail, form validation - not working; 
+    a. display comment preview, enable submit button - only if form is validation
+     
