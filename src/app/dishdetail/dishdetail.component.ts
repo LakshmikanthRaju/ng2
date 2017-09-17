@@ -34,11 +34,11 @@ export class DishdetailComponent implements OnInit {
 
   validationMessages = {
     'author': {
-      'required':      'Name is required.',
-      'minlength':     'Name must be at least 2 characters long.'
+      'required': 'Name is required.',
+      'minlength': 'Name must be at least 2 characters long.'
     },
     'comment': {
-      'required':      'Comment is required.'
+      'required': 'Comment is required.'
     }
   };
 
@@ -62,9 +62,9 @@ export class DishdetailComponent implements OnInit {
 
   createForm() {
     this.commentForm = this.fb.group({
-      author: '',
+      author: ['', [Validators.required, Validators.minLength(2)] ],
       rating: 5,
-      comment: ''
+      comment: ['', Validators.required]
     });
     this.commentForm.valueChanges.subscribe(data => this.onValueChanged(data));
     this.onValueChanged(); // (re)set validation messages now
