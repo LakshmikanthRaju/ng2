@@ -38,7 +38,7 @@
       </md-list-item>
     </md-list>
     <div>
-      <p>{{ commentForm.value | json }}</p>
+      <p *ngIf="commentForm.valid">{{ commentForm.value | json }}</p>
       <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
         <p>
           <md-input-container class="full-width" dividerColor="{{(formErrors.author) ? 'warn' : 'primary'}}">
@@ -59,7 +59,7 @@
             </md-hint>
           </md-input-container>
         </p>
-        <button type="submit" md-button class="background-primary text-floral-white">
+        <button type="submit" md-button class="background-primary text-floral-white" [disabled]="!commentForm.valid">
           Submit
         </button>
       </form>

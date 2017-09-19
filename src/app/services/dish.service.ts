@@ -34,10 +34,9 @@ export class DishService {
   }
 
   getFeaturedDish(): Observable<Dish> {
-    return Observable.of(DISHES.filter((dish) => dish.featured)[0]).delay(2000);
-    //return this.http.get(baseURL + 'dishes?featured=true')
-      //.map(res => { return this.processHTTPMsgService.extractData(res)[0]; })
-      //.catch(error => { return this.processHTTPMsgService.handleError(error); });
+    return this.http.get(baseURL + 'dishes?featured=true')
+      .map(res => { return this.processHTTPMsgService.extractData(res)[0]; })
+      .catch(error => { return this.processHTTPMsgService.handleError(error); });
   }
 
   getDishIds(): Observable<number[]> {

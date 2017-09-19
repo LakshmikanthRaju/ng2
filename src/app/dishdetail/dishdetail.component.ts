@@ -49,7 +49,7 @@ export class DishdetailComponent implements OnInit {
     private fb: FormBuilder,
     @Inject('BaseURL') private BaseURL) {
 
-      this.createForm();
+    this.createForm();
   }
 
   ngOnInit() {
@@ -103,9 +103,7 @@ export class DishdetailComponent implements OnInit {
     
     console.log(this.newComment);
     this.commentForm.reset({
-      author: ['', [Validators.required, Validators.minLength(2)] ],
-      rating: 5,
-      comment: ['', Validators.required]
+      rating: 5
     });
   }
 
