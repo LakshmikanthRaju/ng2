@@ -2,10 +2,12 @@
 2. Routing across menu duplicates its content, not hiding - HAPPENS ON APP ERROR
 3. Form validation - FIXED
 4. URL filter not working: http://localhost:3000/dishes?featured=true - FIXED    
-5. Form reset after submit in dish comment - still showing error after clearing
+5. Form reset after submit in dish comment - showing warning color after clearing
+6. Catch in getDishesId in service - not working
 
 
-Terms:
+TERMS:
 Dependency Injection
 Interpolation
 One-way, Two-way - data binding
+Structural, Attribute Directives

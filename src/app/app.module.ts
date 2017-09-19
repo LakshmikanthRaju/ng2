@@ -6,11 +6,15 @@ import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RestangularModule, Restangular } from 'ngx-restangular';
+
+import { RestangularConfigFactory } from './shared/restConfig';
 
 import { AppComponent } from './app.component';
 import { baseURL } from './shared/baseurl';
 
 import 'hammerjs';
+
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { DishService } from './services/dish.service';
@@ -47,7 +51,8 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [
     DishService, PromotionService, LeaderService, 
