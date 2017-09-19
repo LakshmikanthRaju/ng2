@@ -23,6 +23,7 @@ export class DishdetailComponent implements OnInit {
   dishIds: number[];
   prev: number;
   next: number;
+  dishcopy = null;
 
   commentForm: FormGroup
   newComment: Comment;
@@ -59,6 +60,7 @@ export class DishdetailComponent implements OnInit {
       .subscribe(
         dish => {
           this.dish = dish;
+          this.dishcopy = dish;
           this.setPrevNext(dish.id);
         },
         errmsg => this.errMsg = errmsg);
@@ -100,6 +102,10 @@ export class DishdetailComponent implements OnInit {
     this.newComment = this.commentForm.value;
     this.newComment.date = new Date().toDateString();
     this.dish.comments.push(this.newComment);
+    this.dishcopy.save().subscribe(dish => {
+      this.dish = dish;
+      console.log(this.dish);
+    });
     
     console.log(this.newComment);
     this.commentForm.reset({
