@@ -6,6 +6,11 @@
 6. Catch in getDishesId in service - not working
 
 
+HTTP calls - HTTP Module, Restangular, resource (not used)
+Asynchronous calls - Promise, Observable
+Forms - Template forms, Reactive forms
+
+
 TERMS:
 Dependency Injection
 Interpolation
