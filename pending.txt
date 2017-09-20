@@ -4,6 +4,7 @@
 4. URL filter not working: http://localhost:3000/dishes?featured=true - FIXED    
 5. Form reset after submit in dish comment - showing warning color after clearing
 6. Catch in getDishesId in service - not working
+7. Animations - not appearing/visible properly
 
 
 HTTP calls - HTTP Module, Restangular, resource (not used)

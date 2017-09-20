@@ -23,7 +23,8 @@ export class DishService {
     private processHTTPMsgService: ProcessHTTPMsgService) { }
 
   getDishes(): Observable<Dish[]> {
-    return this.restangular.all('dishes').getList();
+    return Observable.of(DISHES).delay(2000);
+    //return this.restangular.all('dishes').getList();
   }
 
   getDish(id: number): Observable<Dish> {
