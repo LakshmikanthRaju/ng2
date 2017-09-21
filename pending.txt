@@ -5,6 +5,7 @@
 5. Form reset after submit in dish comment - showing warning color after clearing
 6. Catch in getDishesId in service - not working
 7. Animations - not appearing/visible properly
+8. Clicking on header buttons - not highlighting the button active (except 'Home')
 
 
 HTTP calls - HTTP Module, Restangular, resource (not used)
