@@ -3,18 +3,18 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { RestangularModule, Restangular } from 'ngx-restangular';
 
-import { Http, Response } from '@angular/http';
-import { baseURL } from '../shared/baseurl';
+//import { Http, Response } from '@angular/http';
+//import { baseURL } from '../shared/baseurl';
 import { ProcessHTTPMsgService } from './process-httpmsg.service';
 
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/delay';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+//import 'rxjs/add/operator/toPromise';
+//import 'rxjs/add/operator/delay';
+//import 'rxjs/add/observable/of';
+//import 'rxjs/add/operator/map';
+//import 'rxjs/add/operator/catch';
 
 import { Dish } from '../shared/dish';
-import { DISHES } from '../shared/dishes';
+//import { DISHES } from '../shared/dishes';
 
 @Injectable()
 export class DishService {
