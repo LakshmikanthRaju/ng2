@@ -15,10 +15,14 @@ export class LoginComponent implements OnInit {
   constructor(public dialogRef:MdDialogRef<LoginComponent>) { }
 
   ngOnInit() {
+    
   }
 
   onSubmit() {
     console.log("User: ", this.user);
+    if (this.user.remember) {
+      localStorage.setItem('conFusion-user', btoa(this.user.username+':'+this.user.password));
+    }
     this.dialogRef.close();
   }
 
