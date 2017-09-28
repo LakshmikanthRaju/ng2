@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
 
+import { User, UserStorageKey } from '../shared/utils';
+
 @Injectable()
 export class UserService {
-  loggedIn: boolean;
+  private loggedIn: boolean;
 
   constructor() { }
 
-  setLoggedIn(isLoggedIn:boolean):void {
-    this.loggedIn = isLoggedIn;
+  logIn(user:User):void {
+    this.loggedIn = true;
+    if (user.remember) {
+      localStorage.setItem(UserStorageKey, btoa(user.username+':'+user.password));
+    } 
+  }
+
+  logOut():void {
+    this.loggedIn = false;
   }
 
   isLoggedIn():boolean {

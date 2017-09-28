@@ -4,8 +4,6 @@ import { MdDialog, MdDialogRef } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
 import { UserService } from '../services/user.service';
 
-import { LoggedInUser } from '../shared/utils';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -19,17 +17,15 @@ export class HeaderComponent implements OnInit {
     private userService:UserService) { }
 
   ngOnInit() {
-    this.loggedIn = (localStorage.getItem(LoggedInUser)) ? true: false;
-    this.userService.setLoggedIn(this.loggedIn);
+    this.loggedIn = this.userService.isLoggedIn();
     this.logInString = (this.loggedIn) ? "Logout" : "Login";
   }
 
   openLoginForm() {
-    if (!this.logInString) {
+    if (this.loggedIn) {
 
-      localStorage.removeItem(LoggedInUser);
       this.loggedIn = false;
-      this.userService.setLoggedIn(false);
+      this.userService.logOut();
       this.logInString = "Login";
     
     } else {
@@ -37,7 +33,6 @@ export class HeaderComponent implements OnInit {
       let dialogRef = this.dialog.open(LoginComponent, {width: '500px', height: '450px'});
       dialogRef.afterClosed().subscribe(val => {
         this.loggedIn = val;
-        this.userService.setLoggedIn(this.loggedIn);
         this.logInString = (this.loggedIn) ? "Logout" : "Login";
       });
     }

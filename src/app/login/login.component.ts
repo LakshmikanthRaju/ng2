@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
 
 import { UserService } from '../services/user.service';
-import { LoggedInUser } from '../shared/utils';
-
+import { User } from '../shared/utils';
 
 @Component({
   selector: 'app-login',
@@ -13,21 +12,18 @@ import { LoggedInUser } from '../shared/utils';
 })
 export class LoginComponent implements OnInit {
 
-  user = {username: '', password: '', remember: false};
+  user:User;
   
   constructor(public dialogRef:MdDialogRef<LoginComponent>,
     private userService:UserService) { }
 
   ngOnInit() {
-    
+    this.user.remember = false;
   }
 
   onSubmit() {
     console.log("User: ", this.user);
-    if (this.user.remember) {
-      localStorage.setItem(LoggedInUser, btoa(this.user.username+':'+this.user.password));
-    }
-    this.userService.setLoggedIn(true);
+    this.userService.logIn(this.user);
     this.dialogRef.close(true);
   }
 
