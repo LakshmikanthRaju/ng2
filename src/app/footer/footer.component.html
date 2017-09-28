@@ -10,7 +10,7 @@
 
   <div fxFlex="100%" fxFlex.gt-sm="50%">
     <div fxLayout="row">
-      <div fxFlex="40" fxFlexOffset="20px">
+      <div fxFlex="40" fxFlexOffset="20px" *ngIf="isLoggedIn">
         <h4>Links</h4>
         <md-list>
           <md-list-item><a md-button hyperLink="/home">Home</a></md-list-item>

@@ -8,7 +8,8 @@
 8. Clicking on header buttons - not highlighting the button active (except 'Home')
 
 1. Implement simple login by storing cookie in web browser. Have allowed logins in json-server
-
+2. Global variable frequently used eg. logged in or not - use a service to get/set logged in
+3. redirect url to home/login if no one has logged in - 
 
 
 HTTP calls - HTTP Module, Restangular, resource (not used)
