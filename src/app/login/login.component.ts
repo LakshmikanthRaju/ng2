@@ -12,7 +12,7 @@ import { User } from '../shared/utils';
 })
 export class LoginComponent implements OnInit {
 
-  user:User;
+  user:User = new User();
   
   constructor(public dialogRef:MdDialogRef<LoginComponent>,
     private userService:UserService) { }
